@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Can - tosunc.uk</title>
+<script>
+var timeoutInMiliseconds = 30000;
+var timeoutId; 
+  
+function startTimer() { 
+    timeoutId = window.setTimeout(doInactive, timeoutInMiliseconds)
+}
+  
+function doInactive() {
+	window.location.reload(true)
+}
+
+function resetTimer() { 
+    window.clearTimeout(timeoutId)
+    startTimer();
+}
+
+function setupTimers () {
+    document.addEventListener("mousemove", resetTimer, false);
+    document.addEventListener("mousedown", resetTimer, false);
+    document.addEventListener("keypress", resetTimer, false);
+    document.addEventListener("touchmove", resetTimer, false);
+     
+    startTimer();
+}
+ 
+document.addEventListener("DOMContentLoaded", function() {
+	setupTimers();
+});
+</script>
+</head>
+<body>
+<h1>30 Saniye Sonra Haraketsiz Kalma Sonrası Tarayıcı Otomatik Yenilenecektir.</h1>
+</body>
+</html>
